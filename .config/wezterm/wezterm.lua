@@ -145,28 +145,28 @@ local config = {
 		}, -- Pane navigation
 		{
 			key = "LeftArrow",
-			mods = "ALT",
+			mods = "CMD|CTRL",
 			action = wezterm.action({
 				ActivatePaneDirection = "Left",
 			}),
 		},
 		{
 			key = "DownArrow",
-			mods = "ALT",
+			mods = "CMD|CTRL",
 			action = wezterm.action({
 				ActivatePaneDirection = "Down",
 			}),
 		},
 		{
 			key = "UpArrow",
-			mods = "ALT",
+			mods = "CMD|CTRL",
 			action = wezterm.action({
 				ActivatePaneDirection = "Up",
 			}),
 		},
 		{
 			key = "RightArrow",
-			mods = "ALT",
+			mods = "CMD|CTRL",
 			action = wezterm.action({
 				ActivatePaneDirection = "Right",
 			}),
@@ -178,96 +178,96 @@ local config = {
 		},
 		{
 			key = "1",
-			mods = "CMD",
+			mods = "ALT",
 			action = wezterm.action({
 				ActivateTab = 0,
 			}),
 		},
 		{
 			key = "2",
-			mods = "CMD",
+			mods = "ALT",
 			action = wezterm.action({
 				ActivateTab = 1,
 			}),
 		},
 		{
 			key = "3",
-			mods = "CMD",
+			mods = "ALT",
 			action = wezterm.action({
 				ActivateTab = 2,
 			}),
 		},
 		{
 			key = "4",
-			mods = "CMD",
+			mods = "ALT",
 			action = wezterm.action({
 				ActivateTab = 3,
 			}),
 		},
 		{
 			key = "5",
-			mods = "CMD",
+			mods = "ALT",
 			action = wezterm.action({
 				ActivateTab = 4,
 			}),
 		},
 		{
 			key = "6",
-			mods = "CMD",
+			mods = "ALT",
 			action = wezterm.action({
 				ActivateTab = 5,
 			}),
 		},
 		{
 			key = "7",
-			mods = "CMD",
+			mods = "ALT",
 			action = wezterm.action({
 				ActivateTab = 6,
 			}),
 		},
 		{
 			key = "8",
-			mods = "CMD",
+			mods = "ALT",
 			action = wezterm.action({
 				ActivateTab = 7,
 			}),
 		},
 		{
 			key = "9",
-			mods = "CMD",
+			mods = "ALT",
 			action = wezterm.action({
 				ActivateTab = 8,
 			}),
 		},
 		{
 			key = "t",
-			mods = "CTRL",
+			mods = "LEADER",
 			action = wezterm.action.SpawnTab("CurrentPaneDomain"),
 		},
 		{
 			key = "w",
-			mods = "CTRL",
+			mods = "LEADER",
 			action = wezterm.action.CloseCurrentTab({
 				confirm = true,
 			}),
 		},
-		{
-			key = "d",
-			mods = "CTRL",
-			action = wezterm.action.CloseCurrentPane({
-				confirm = true,
-			}),
-		},
+		-- {
+		-- 	key = "d",
+		--	mods = "CTRL",
+		--	action = wezterm.action.CloseCurrentPane({
+		--		confirm = true,
+		--	}),
+		-- },
 		{
 			key = "LeftArrow",
-			mods = "ALT|CMD",
+			mods = "ALT",
 			action = wezterm.action({
 				ActivateTabRelative = -1,
 			}),
 		},
 		{
 			key = "RightArrow",
-			mods = "ALT|CMD",
+			mods = "ALT",
 			action = wezterm.action({
 				ActivateTabRelative = 1,
 			}),
