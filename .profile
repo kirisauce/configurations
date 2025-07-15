@@ -12,6 +12,7 @@ function load_my_profile() {
 if [ -d "$PROFILE_COLLECTION_PATH" ]; then
     load_my_profile rustup-mirror
     load_my_profile ime
+    load_my_profile user-local-bin
 else
     echo "Warning: custom profile collection path does not exist ($PROFILE_COLLECTION_PATH)"
 fi

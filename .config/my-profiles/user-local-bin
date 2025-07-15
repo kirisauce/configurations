@@ -1,0 +1,7 @@
+export __MP_USER_LOCAL_BIN_PATH="$HOME/.local/bin"
+
+if [ -d "$__MP_USER_LOCAL_BIN_PATH" ]; then
+    export PATH="$__MP_USER_LOCAL_BIN_PATH:$PATH"
+fi
+
+unset __MP_USER_LOCAL_BIN_PATH
