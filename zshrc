@@ -1,3 +1,6 @@
+## Most content of this file was taken from Manjaro package: manjaro-zsh-config
+## Thanks Manjaro Team's work!
+
 ## Options section
 setopt correct                                                  # Auto correct mistakes
 setopt extendedglob                                             # Extended globbing. Allows using regular expressions with *
@@ -14,12 +17,6 @@ setopt histignorespace                                          # Don't save com
 export HISTFILE="$HOME/.history"
 export HISTSIZE=10000
 export SAVEHIST=10000
-
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#888888,bg=bold"
-
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 autoload -U compinit colors zcalc
 compinit -d
@@ -50,6 +47,7 @@ bindkey '^[Od' backward-word                                    #
 bindkey '^[[1;5D' backward-word                                 #
 bindkey '^[[1;5C' forward-word                                  #
 bindkey '^H' backward-kill-word                                 # delete previous word with ctrl+backspace
+bindkey '^[[3;5~' kill-word                                     # delete next word with ctrl+delte
 bindkey '^[[Z' undo                                             # Shift+tab undo last action
 
 ## Alias section
@@ -58,3 +56,34 @@ alias df='df -h'                                                # Human-readable
 alias free='free -m'                                            # Show sizes in MB
 alias gitu='git add . && git commit && git push'
 alias ls='ls --color=auto'
+
+## External Shell Integrations
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh --cmd=cd)"
+
+## Plugins section: Enable fish style features
+zmodload zsh/terminfo
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=245,bg=bold"
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+bindkey '^[[A' history-substring-search-up			
+bindkey '^[[B' history-substring-search-down
+
+## Use bash-style word selecting
+autoload -U select-word-style
+select-word-style bash
+
+if [[ -r "~/.cargo/env" ]]; then
+    source ~/.cargo/env
+fi
+
+alias ls='eza'
+alias ll='ls -al'
+alias la='ls -a'
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+## ----- .zshrc END -----
