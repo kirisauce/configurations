@@ -1,0 +1,9 @@
+include "tencent.kdl"
+include "other.kdl"
+include "steam.kdl"
+
+window-rule {
+    geometry-corner-radius 14
+    clip-to-geometry true
+    draw-border-with-background false
+}

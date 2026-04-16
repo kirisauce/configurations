@@ -1,0 +1,6 @@
+window-rule {
+    match app-id="^steam$"
+    match title="好友列表"
+    open-floating false
+    default-column-width { proportion 0.15; }
+}

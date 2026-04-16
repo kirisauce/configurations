@@ -1,0 +1,6 @@
+window-rule {
+    match app-id="QQ"
+    match title="^图片查看器$"
+
+    open-floating true
+}

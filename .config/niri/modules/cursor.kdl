@@ -1,0 +1,7 @@
+// 指定光标的主题和大小，打字时隐藏光标
+cursor {
+    // xcursor-theme "Dracula-cursors"
+    xcursor-theme "breeze"
+    xcursor-size 24
+    hide-when-typing
+}
